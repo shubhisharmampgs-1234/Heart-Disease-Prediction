@@ -52,6 +52,13 @@ Correlation between features
 Age vs disease trends
 Heatmap for feature correlation
 
+🧹 Data Preprocessing
+
+- Duplicate records were checked and handled
+- Missing values were analyzed
+- Dataset was split into features (X) and target (y)
+- Train-test split was performed for model evaluation
+- Feature scaling was applied using StandardScaler to normalize data
 
 
 🤖 Machine Learning Models Used
@@ -66,14 +73,37 @@ K-Nearest Neighbors (KNN)
 
 📈 Model Evaluation
 
-Models were evaluated using:
+The models were evaluated using multiple performance metrics to ensure reliable comparison:
 
-Accuracy Score
-Confusion Matrix
-Precision & Recall
+- Accuracy Score: Measures overall correctness of predictions
+- Confusion Matrix: Shows correct vs incorrect classifications
+- Precision: Measures correctness of positive predictions
+- Recall: Measures ability to detect actual positive cases
+
+This multi-metric evaluation ensures that the model is not only accurate but also reliable for medical prediction scenarios where false negatives are critical.
+
+📊 Results Summary
+
+All models were compared based on accuracy:
+
+- Logistic Regression: Baseline performance
+- Decision Tree: Good but prone to overfitting
+- KNN: Moderate performance
+- Random Forest: Best performing model
+
+Final selected model: Random Forest Classifier
+
 🏆 Best Model
 
-The Random Forest Classifier performed best among all models and was selected as the final model for prediction.
+After comparing all models, the Random Forest Classifier was selected as the final model due to its superior performance and stability.
+
+Reasons for selection:
+- Higher accuracy compared to other models
+- Better handling of non-linear relationships
+- Reduced overfitting due to ensemble learning
+- More robust predictions on unseen data
+
+This makes it suitable for real-world medical prediction tasks where reliability is crucial.
 
 Saved Model:
 
@@ -81,38 +111,53 @@ model/random_forest_model.pkl
 
 📁 Project Structure
 
+```
 Heart-Disease-Prediction/
 │
 ├── data/
-
-│ └── heart.csv
+│   └── heart.csv
 │
-
 ├── notebook/
-
-│ └── Heart_Disease_Prediction.ipynb
+│   └── Heart_Disease_Prediction.ipynb
 │
-
 ├── model/
-
-│ └── random_forest_model.pkl
+│   └── random_forest_model.pkl
 │
-
 ├── results/
-
-│ ├── age_distribution.png
-
-│ ├── confusion_matrix.png
-
-│ ├── correlation_heatmap.png
-
-│ ├── heart_disease_distribution.png
-
-│ └── model_accuracy_comparison.png
+│   ├── age_distribution.png
+│   ├── confusion_matrix.png
+│   ├── correlation_heatmap.png
+│   ├── heart_disease_distribution.png
+│   └── model_accuracy_comparison.png
 │
-
 └── README.md
+```
 
+🚀 How to Run Project
+
+1. Clone the repository
+2. Install dependencies:
+   pip install pandas numpy matplotlib seaborn scikit-learn
+
+3. Open Jupyter Notebook:
+   notebook/Heart_Disease_Prediction.ipynb
+
+4. Run all cells sequentially
+
+5. View results in the results/ folder
+
+
+ 🎤 Conclusion
+
+This project successfully demonstrates the application of machine learning techniques for predicting heart disease based on patient medical data.
+
+Key takeaways:
+- Data preprocessing significantly improves model performance
+- Exploratory Data Analysis helps in understanding hidden patterns in data
+- Ensemble models like Random Forest perform better for classification tasks
+- Proper evaluation metrics are necessary for reliable medical predictions
+
+The final model can assist in early detection of heart disease, which may help in timely medical intervention.
 
 🚀 Future Improvements
 
@@ -126,3 +171,9 @@ Integration with hospital systems
 UCI Machine Learning Repository
 Scikit-learn Documentation
 Kaggle Datasets
+
+👨‍💻 Author
+
+This project was developed as part of Minor Project submission.
+
+Submitted by: SHUBHI SHARMA (CSE-AI 1st year)
