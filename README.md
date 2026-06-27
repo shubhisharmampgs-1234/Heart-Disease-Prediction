@@ -78,7 +78,9 @@ The Random Forest Classifier performed best among all models and was selected as
 Saved Model:
 
 model/random_forest_model.pkl
+
 📁 Project Structure
+
 Heart-Disease-Prediction/
 │
 ├── data/
